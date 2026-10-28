@@ -1,0 +1,14 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.astraeyelabs/research",
+  "description": "Read your AstraEye research reports and talk with SAGE about U.S. stocks and crypto.",
+  "title": "AstraEye Labs",
+  "version": "1.0.0",
+  "websiteUrl": "https://astraeyelabs.io/research-api",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://astraeyelabs.io/mcp"
+    }
+  ]
+}
