@@ -3,8 +3,8 @@
 **AI research on U.S. stocks, ETFs and crypto, inside the assistant you already use.**
 
 [AstraEye Labs](https://astraeyelabs.io) is an AI research lab for U.S. stocks, ETFs and crypto. Specialist AI
-scientists compute every figure in code on licensed market data, and SAGE, the research guide, writes one report
-from their findings, with the method behind each analysis and the data sources it used.
+scientists compute figures in code from licensed market data, and SAGE, the research guide, writes one report
+from their findings, listing the data sources it used and what the data could not show.
 
 This repository documents the AstraEye Labs **remote MCP server**. It lets an AI assistant (ChatGPT, Claude,
 Gemini, Perplexity, Grok or any MCP client) read a member's finished research reports and their methods, browse
@@ -22,10 +22,11 @@ permission it can also change their watchlist and projects, and price and start 
 | Documentation | [astraeyelabs.io/research-api](https://astraeyelabs.io/research-api) |
 | For AI assistants | [astraeyelabs.io/llms.txt](https://astraeyelabs.io/llms.txt) |
 
-## What makes the numbers checkable
+## How the numbers are made
 
-- **Computed, not recalled.** Every figure in a report is computed in code from licensed market data and named
-  public sources. The language model explains the results; it does not produce the numbers.
+- **Computed, not recalled.** Figures in a report are computed in code from licensed market data and named
+  public sources. The sentences around them are written by a model and can be wrong, so check anything important
+  against the source the report names.
 - **Method and sources shown.** Each report lists its data sources, and each analysis carries its method: what it
   measures, the rule it applies, and what it cannot support.
 - **Stocks, ETFs and crypto in one report**, from desks for technical structure, fundamentals and macro, news and
