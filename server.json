@@ -1,9 +1,13 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.astraeyelabs/research",
-  "description": "Read your AstraEye research reports and talk with SAGE about U.S. stocks and crypto.",
+  "description": "AI research on U.S. stocks, ETFs and crypto: your reports, analyses, Earnings Radar and SAGE.",
   "title": "AstraEye Labs",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "repository": {
+    "url": "https://github.com/alexeykovalyov/astraeye-labs-mcp",
+    "source": "github"
+  },
   "websiteUrl": "https://astraeyelabs.io/research-api",
   "remotes": [
     {

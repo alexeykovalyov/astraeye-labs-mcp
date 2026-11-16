@@ -8,8 +8,9 @@ from their findings, listing the data sources it used and what the data could no
 
 This repository documents the AstraEye Labs **remote MCP server**. It lets an AI assistant (ChatGPT, Claude,
 Gemini, Perplexity, Grok or any MCP client) read a member's finished research reports and their methods, browse
-the analysis catalog and research templates, follow a run and ask SAGE about their research. With the member's
-permission it can also change their watchlist and projects, and price and start new research.
+the analysis catalog and research templates, read the public research library, see the earnings calendar of the
+stocks they follow, follow a run and ask SAGE about their research. With the member's permission it can also
+change their watchlist, projects and Earnings Radar stocks, and price and start new research.
 
 [![AstraEye Labs MCP connector](https://glama.ai/mcp/connectors/io.astraeyelabs/research/badges/score.svg)](https://glama.ai/mcp/connectors/io.astraeyelabs/research)
 
@@ -56,9 +57,26 @@ its own in AstraEye Labs settings.
   open the new connector and choose Add connector. Custom connectors need a Perplexity Pro plan or higher.
 - **Grok**: open Connectors, add a custom connector and enter the server URL.
 
-**Who can connect.** The connector needs a personal AstraEye Labs account on the Space Analyst plan or above
-(personal accounts only, 18+, not available in every jurisdiction). There is a free plan, and new accounts start
-with a 7-day trial with no card. Current plans: [astraeyelabs.io/subscribe](https://astraeyelabs.io/subscribe).
+**Who can connect.** Any personal AstraEye Labs account (personal accounts only, 18+, not available in every
+jurisdiction). On the free plan the connector serves the member's own reports, the public research library,
+`find_assets` and Earnings Radar; every other tool answers that it is not available on the current plan. The full
+set of tools needs the Space Analyst plan or above. New accounts start with a 7-day trial with no card. Current
+plans: [astraeyelabs.io/subscribe](https://astraeyelabs.io/subscribe).
+
+## Use it
+
+Once connected, ask the assistant in your own words. For example:
+
+- "Show me my latest AstraEye report on NVDA and what its data sources were."
+- "What does the AstraEye analysis Volatility Outlook measure, and what can it not support?"
+- "List the newest reports in the AstraEye public library."
+- "Turn on Earnings Radar for MSFT." (AstraEye then writes a report on each of MSFT's earnings releases.)
+- "When do the stocks on my Earnings Radar report next?"
+- "Create an AstraEye project on AAPL and BTC with a technical and a news analysis, and tell me the price before
+  running it."
+
+The assistant shows the price of a run in Astra Credits and starts it only after you agree. Research describes
+what the data shows; it never tells you what to buy or sell.
 
 **What it returns from a report.** The written prose of the member's own reports: the executive summary, the
 discussion, the conclusion, the prepared questions and answers and, where a report has them, its methodology. It
@@ -85,6 +103,8 @@ Read tools (scope `research:read`):
 | `list_market_slices` | Market slices a project can cover, such as the S&P 500, the Dow 30, a sector or the top 100 coins |
 | `find_assets` | Looks up crypto assets, U.S. stocks and ETFs by name or ticker and returns the id the other tools take |
 | `list_watchlist` | The assets on the member's watchlist. Research runs only on these |
+| `list_public_reports` | The public research library: reports anyone can read, newest first |
+| `get_earnings_calendar` | The next earnings report dates of the stocks the member follows, with the figures already computed on each |
 
 SAGE and action tools (scope `sage:chat`, off by default and chosen on the consent screen):
 
@@ -102,6 +122,8 @@ SAGE and action tools (scope `sage:chat`, off by default and chosen on the conse
 | `start_research_run` | Starts a priced run after the member agreed to the price, spending credits within the daily credit limit. A run never starts above that price |
 | `stop_research_run` | Stops the run in progress. What it found so far is kept |
 | `refresh_connected_balances` | Refreshes balances from the exchanges the member connected. Free, and it never returns an amount |
+| `turn_on_earnings_radar` | Turns on Earnings Radar for one stock: a report on each of its earnings releases, within the member's plan |
+| `turn_off_earnings_radar` | Turns off Earnings Radar for one stock |
 
 ## Safety and spending
 
